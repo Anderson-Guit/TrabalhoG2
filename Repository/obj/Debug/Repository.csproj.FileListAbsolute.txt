@@ -1,0 +1,4 @@
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Repository\bin\Debug\Repository.dll
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Repository\bin\Debug\Repository.pdb
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Repository\obj\Debug\Repository.dll
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Repository\obj\Debug\Repository.pdb

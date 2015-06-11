@@ -1,0 +1,4 @@
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Data\bin\Debug\Data.dll
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Data\bin\Debug\Data.pdb
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Data\obj\Debug\Data.dll
+C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\Data\obj\Debug\Data.pdb
