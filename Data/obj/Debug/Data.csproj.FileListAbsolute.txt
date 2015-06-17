@@ -6,3 +6,4 @@ C:\Users\Anderson\Source\Repos\TrabalhoG22\Data\bin\Debug\Data.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG22\Data\bin\Debug\Data.pdb
 C:\Users\Anderson\Source\Repos\TrabalhoG22\Data\obj\Debug\Data.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG22\Data\obj\Debug\Data.pdb
+C:\Users\Anderson\Source\Repos\TrabalhoG22\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

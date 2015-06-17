@@ -49,3 +49,4 @@ C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Newtonsoft.Json.xml
 C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Antlr3.Runtime.pdb
 C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\obj\Debug\TrabalhoG2.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\obj\Debug\TrabalhoG2.pdb
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\obj\Debug\TrabalhoG2.csprojResolveAssemblyReference.cache
