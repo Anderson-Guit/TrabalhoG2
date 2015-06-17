@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Conn
 {
-    class MySqlConn
+    public class MySqlConn
     {
         private static MySqlConnection conn = new MySqlConnection();
         private static MySqlCommand cmd = new MySqlCommand();

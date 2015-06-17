@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Cliente
+    public class Cliente
     {
         public int IdCliente { get; set; }
         public String Nome { get; set; }

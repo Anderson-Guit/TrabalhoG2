@@ -13,7 +13,8 @@ namespace Data
         public String Nome { get; set; }
         public String Descricao { get; set; }
         public Double Valor { get; set; }
-
+        public int QntdEstoque { get; set; }
+        
         public Produto()
         {
 

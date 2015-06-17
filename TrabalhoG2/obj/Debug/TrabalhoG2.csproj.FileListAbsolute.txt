@@ -24,3 +24,28 @@ C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\TrabalhoG2\bin\Antlr3.R
 C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\TrabalhoG2\obj\Debug\TrabalhoG2.csprojResolveAssemblyReference.cache
 C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\TrabalhoG2\obj\Debug\TrabalhoG2.dll
 C:\Users\Anderson\Desktop\SS\Segurança em C#\TrabalhoG2\TrabalhoG2\obj\Debug\TrabalhoG2.pdb
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\TrabalhoG2.dll.config
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\TrabalhoG2.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\TrabalhoG2.pdb
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Antlr3.Runtime.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Newtonsoft.Json.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Helpers.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Mvc.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Optimization.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Razor.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.WebPages.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\WebGrease.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Helpers.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Mvc.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Optimization.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.Razor.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.WebPages.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Newtonsoft.Json.xml
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\bin\Antlr3.Runtime.pdb
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\obj\Debug\TrabalhoG2.dll
+C:\Users\Anderson\Source\Repos\TrabalhoG22\TrabalhoG2\obj\Debug\TrabalhoG2.pdb
