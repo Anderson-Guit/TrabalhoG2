@@ -8,3 +8,9 @@ C:\Users\Anderson\Source\Repos\TrabalhoG22\Conn\bin\Debug\Conn.pdb
 C:\Users\Anderson\Source\Repos\TrabalhoG22\Conn\obj\Debug\Conn.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG22\Conn\obj\Debug\Conn.pdb
 C:\Users\Anderson\Source\Repos\TrabalhoG22\Conn\obj\Debug\Conn.csprojResolveAssemblyReference.cache
+C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Conn\bin\Debug\Conn.dll
+C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Conn\bin\Debug\Conn.pdb
+C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Conn\bin\Debug\mysql.data.dll
+C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Conn\obj\Debug\Conn.dll
+C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Conn\obj\Debug\Conn.pdb
+C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Conn\obj\Debug\Conn.csprojResolveAssemblyReference.cache

@@ -9,7 +9,7 @@ using Conn;
 
 namespace Repository
 {
-    class ProdutoRepository
+    public class ProdutoRepository
     {
 
         public void Create(Produto pProduto)
@@ -71,11 +71,37 @@ namespace Repository
 
             while (dr.Read())
             {
+                produto.IdProduto = (int)dr["IdProduto"];
                 produto.Nome = (String)dr["Nome"];
                 produto.Descricao = (String)dr["Descricao"];
                 produto.Valor = (Double)dr["Valor"];
                 produto.QntdEstoque = (int)dr["QntdEstoque"];
 
+            }
+            return produto;
+        }
+
+        public static List<Produto> GetAll()
+        {
+            StringBuilder sql = new StringBuilder();
+            List<Produto> produto = new List<Produto>();
+
+            sql.Append("SELECT * ");
+            sql.Append("FROM Produto ");
+
+            MySqlDataReader dr = MySqlConn.Get(sql.ToString());
+
+            while (dr.Read())
+            {
+                produto.Add(
+                    new Produto
+                    {
+                        IdProduto = (int)dr["IdProduto"],
+                        Nome = (String)dr["Nome"],
+                        Descricao = (String)dr["Descricao"],
+                        Valor = (Double)dr["Valor"],
+                        QntdEstoque = (int)dr["QntdEstoque"],
+                    });
             }
             return produto;
         }

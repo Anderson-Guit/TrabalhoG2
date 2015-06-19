@@ -9,7 +9,7 @@ using Conn;
 
 namespace Repository
 {
-    class ClienteRepository
+    public class ClienteRepository
     {
 
         public void Create(Cliente pCliente)
@@ -79,6 +79,7 @@ namespace Repository
 
             while (dr.Read())
             {
+                cliente.IdCliente = (int)dr["IdCliente"];
                 cliente.Nome = (String)dr["Nome"];
                 cliente.Telefone = (String)dr["Telefone"];
                 cliente.Endereco = (String)dr["Endereco"];
@@ -106,6 +107,7 @@ namespace Repository
                 cliente.Add(
                     new Cliente
                     {
+                        IdCliente = (int)dr["IdCliente"],
                         Nome = (String)dr["Nome"],
                         Telefone = (String)dr["Telefone"],
                         Endereco = (String)dr["Endereco"],

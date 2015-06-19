@@ -9,7 +9,7 @@ using Conn;
 
 namespace Repository
 {
-    class OrdemServicoRepository
+    public class OrdemServicoRepository
     {
 
         public void Create(OrdemServico pOS)
@@ -81,6 +81,7 @@ namespace Repository
 
             while (dr.Read())
             {
+                os.IdOS = (int)dr["IdOs"];
                 os.Equipamento = (String)dr["Equipamento"];
                 os.Marca = (String)dr["Marca"];
                 os.Modelo = (String)dr["Modelo"];
@@ -90,6 +91,36 @@ namespace Repository
                 os.Local = (String)dr["Local"];
                 os.Observacoes = (String)dr["Observacoes"];
                 os.Status = (String)dr["Status"];
+            }
+            return os;
+        }
+
+        public static List<OrdemServico> GetAll()
+        {
+            StringBuilder sql = new StringBuilder();
+            List<OrdemServico> os = new List<OrdemServico>();
+
+            sql.Append("SELECT * ");
+            sql.Append("FROM OrdemServico ");
+
+            MySqlDataReader dr = MySqlConn.Get(sql.ToString());
+
+            while (dr.Read())
+            {
+                os.Add(
+                    new OrdemServico
+                    {
+                        IdOS = (int)dr["IdOS"],
+                        Equipamento = (String)dr["Equipamento"],
+                        Marca = (String)dr["Marca"],
+                        Modelo = (String)dr["Modelo"],
+                        NumeroSerie = (String)dr["NumeroSerie"],
+                        Defeito = (String)dr["Defeito"],
+                        Servico = (String)dr["Servico"],
+                        Local = (String)dr["Local"],
+                        Observacoes = (String)dr["Observacoes"],
+                        Status = (String)dr["Status"]
+                    });
             }
             return os;
         }

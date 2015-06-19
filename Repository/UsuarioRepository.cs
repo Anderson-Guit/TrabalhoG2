@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace Repository
 {
-    class UsuarioRepository
+    public class UsuarioRepository
     {
 
         public void Create(Usuario pUsuario)
@@ -69,9 +69,34 @@ namespace Repository
 
             while (dr.Read())
             {
+                usuario.IdUsuario = (int)dr["IdUsuario"];
                 usuario.Nome = (string)dr["Nome"];
                 usuario.Senha = (string)dr["Senha"];
                 usuario.Adm = (Boolean)dr["Adm"];
+            }
+            return usuario;
+        }
+
+        public static List<Usuario> GetAll()
+        {
+            StringBuilder sql = new StringBuilder();
+            List<Usuario> usuario = new List<Usuario>();
+
+            sql.Append("SELECT * ");
+            sql.Append("FROM Usuario ");
+
+            MySqlDataReader dr = MySqlConn.Get(sql.ToString());
+
+            while (dr.Read())
+            {
+                usuario.Add(
+                    new Usuario
+                    {
+                        IdUsuario = (int)dr["IdUsuario"],
+                        Nome = (string)dr["Nome"],
+                        Senha = (string)dr["Senha"],
+                        Adm = (Boolean)dr["Adm"],
+                    });
             }
             return usuario;
         }
