@@ -15,9 +15,9 @@ namespace Conn
 
         public static string StrConn = "Server=localhost" +
                                        ";Port=3306" +
-                                       ";Database=TrabalhoG2" +
+                                       ";Database=test" +
                                        ";Uid=root" +
-                                       ";Pwd=naa";
+                                       ";Pwd=vertrigo";
 
         public static bool Connect()
         {
