@@ -116,6 +116,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,18 +153,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\CreateClienteView.cshtml" />
-    <Content Include="Views\EditClienteView.cshtml" />
-    <Content Include="Views\DeleteClienteView.cshtml" />
-    <Content Include="Views\CreateOsView.cshtml" />
-    <Content Include="Views\EditOsView.cshtml" />
-    <Content Include="Views\DeleteOsView.cshtml" />
-    <Content Include="Views\CreateProdutoView.cshtml" />
-    <Content Include="Views\EditProdutoView.cshtml" />
-    <Content Include="Views\DeleteProdutoView.cshtml" />
-    <Content Include="Views\CreateUserView.cshtml" />
-    <Content Include="Views\EditUserView.cshtml" />
-    <Content Include="Views\DeleteUserView.cshtml" />
+    <Content Include="Views\Cliente\CreateClienteView.cshtml" />
+    <Content Include="Views\Cliente\EditClienteView.cshtml" />
+    <Content Include="Views\Cliente\DeleteClienteView.cshtml" />
+    <Content Include="Views\OrdemServico\CreateOsView.cshtml" />
+    <Content Include="Views\OrdemServico\EditOsView.cshtml" />
+    <Content Include="Views\OrdemServico\DeleteOsView.cshtml" />
+    <Content Include="Views\Produto\CreateProdutoView.cshtml" />
+    <Content Include="Views\Produto\EditProdutoView.cshtml" />
+    <Content Include="Views\Produto\DeleteProdutoView.cshtml" />
+    <Content Include="Views\Usuario\CreateUserView.cshtml" />
+    <Content Include="Views\Usuario\EditUserView.cshtml" />
+    <Content Include="Views\Usuario\DeleteUserView.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
