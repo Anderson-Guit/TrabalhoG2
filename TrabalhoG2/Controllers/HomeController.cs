@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data;
+using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,5 +28,6 @@ namespace TrabalhoG2.Controllers
 
             return View();
         }
+
     }
 }
