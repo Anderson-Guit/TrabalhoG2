@@ -1,6 +1,29 @@
 ﻿@{
     ViewBag.Title = "ATENDA";
 }
+<script language="JavaScript" type="text/javascript">
+    function BuscaCliente() {
+        var nome;
+
+        nome = prompt("Digite o nome do cliente:");        
+
+        window.location = "../Cliente/SearchClienteView?pNome=" + nome;
+    }
+    function BuscaOS() {
+        var nome;
+
+        nome = prompt("Digite o numero da OS:");
+
+        window.location = "../OrdemServico/SearchOSView?pNome=" + nome;
+    }
+    function BuscaProduto() {
+        var nome;
+
+        nome = prompt("Digite o nome do Produto:");
+
+        window.location = "../Produto/SearchProdutoView?pNome=" + nome;
+    }
+</script>
 
 <div class="jumbotron">
     <h1>ATENDA</h1>
@@ -11,22 +34,21 @@
     <div class="col-md-4">
         <h2>Clientes</h2>
 
-        <p><a class="btn btn-default" href="http://localhost:47105/Cliente/CreateClienteView">Novo &raquo;</a></p>
-        <p><a class="btn btn-default" href="http://localhost:47105/Cliente/EditClienteView">Alterar &raquo;</a></p>
-        <p><a class="btn btn-default" href="http://localhost:47105/Cliente/CreateClienteView">Listar &raquo;</a></p>
-        <p><a class="btn btn-default" href="http://localhost:47105/Cliente/CreateClienteView">Buscar &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://localhost:47105/Cliente/CreateClienteView">Novo &raquo;</a>
+        <a class="btn btn-default" href="http://localhost:47105/Cliente/ListClientesView">Listar &raquo;</a>
+        <a class="btn btn-default" onclick="BuscaCliente();" >Buscar &raquo;
+            </a></p>
     </div>
     <div class="col-md-4">
         <h2>Ordens de Serviço</h2>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Novo &raquo;</a></p>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Alterar &raquo;</a></p>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Listar &raquo;</a></p>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Buscar &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://localhost:47105/OrdemServico/CreateOsView">Novo &raquo;</a>
+        <a class="btn btn-default" href="../CreateClienteView.cshtml">Listar &raquo;</a>
+        <a class="btn btn-default" onclick="BuscaOS();">Buscar &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Produtos</h2>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Novo &raquo;</a></p>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Alterar &raquo;</a></p>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Listar &raquo;</a></p>
-        <p><a class="btn btn-default" href="../CreateClienteView.cshtml">Buscar &raquo;</a></p>    </div>
+        <p><a class="btn btn-default" href="http://localhost:47105/Produto/CreateProdutoView">Novo &raquo;</a>
+            <a class="btn btn-default" href="http://localhost:47105/Produto/ListProdutosView">Listar &raquo;</a>
+        <a class="btn btn-default" onclick="BuscaProduto();">Buscar &raquo;</a></p>    
+    </div>
 </div>

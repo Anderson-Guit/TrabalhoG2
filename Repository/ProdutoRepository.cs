@@ -35,7 +35,7 @@ namespace Repository
             MySqlCommand cmd = new MySqlCommand();
 
             sql.Append("UPDATE Produto SET Nome=@Nome, Descricao=@Descricao, Valor=@Valor, QntdEstoque=@QntdEstoque");
-            sql.Append("WHERE IdProduto=" + pProduto.IdProduto);
+            sql.Append(" WHERE IdProduto=" + pProduto.IdProduto);
 
             cmd.Parameters.AddWithValue("@Nome", (pProduto.Nome));
             cmd.Parameters.AddWithValue("@Descricao", pProduto.Descricao);
@@ -58,6 +58,29 @@ namespace Repository
             MySqlConn.CommandPersist(cmd);
         }
 
+        public static Produto GetName(String pNome)
+        {
+            StringBuilder sql = new StringBuilder();
+            Produto produto = new Produto();
+
+            sql.Append("SELECT * ");
+            sql.Append("FROM Produto ");
+            sql.Append("WHERE Nome = '" + pNome + "'");
+
+            MySqlDataReader dr = MySqlConn.Get(sql.ToString());
+
+            while (dr.Read())
+            {
+                produto.IdProduto = Convert.ToInt32(dr["IdProduto"]);
+                produto.Nome = (String)dr["Nome"];
+                produto.Descricao = (String)dr["Descricao"];
+                produto.Valor = (Double)dr["Valor"];
+                produto.QntdEstoque = Convert.ToInt32(dr["QntdEstoque"]);
+
+            }
+            return produto;
+        }
+
         public static Produto GetOne(int pId)
         {
             StringBuilder sql = new StringBuilder();
@@ -65,17 +88,17 @@ namespace Repository
 
             sql.Append("SELECT * ");
             sql.Append("FROM Produto ");
-            sql.Append("WHERE IdProduto=" + pId);
+            sql.Append("WHERE IdProduto = " + pId);
 
             MySqlDataReader dr = MySqlConn.Get(sql.ToString());
 
             while (dr.Read())
             {
-                produto.IdProduto = (int)dr["IdProduto"];
+                produto.IdProduto = Convert.ToInt32(dr["IdProduto"]);
                 produto.Nome = (String)dr["Nome"];
                 produto.Descricao = (String)dr["Descricao"];
                 produto.Valor = (Double)dr["Valor"];
-                produto.QntdEstoque = (int)dr["QntdEstoque"];
+                produto.QntdEstoque = Convert.ToInt32(dr["QntdEstoque"]);
 
             }
             return produto;
@@ -84,7 +107,7 @@ namespace Repository
         public static List<Produto> GetAll()
         {
             StringBuilder sql = new StringBuilder();
-            List<Produto> produto = new List<Produto>();
+            List<Produto> produtos = new List<Produto>();
 
             sql.Append("SELECT * ");
             sql.Append("FROM Produto ");
@@ -93,17 +116,17 @@ namespace Repository
 
             while (dr.Read())
             {
-                produto.Add(
+                produtos.Add(
                     new Produto
                     {
-                        IdProduto = (int)dr["IdProduto"],
+                        IdProduto = Convert.ToInt32(dr["IdProduto"]),
                         Nome = (String)dr["Nome"],
                         Descricao = (String)dr["Descricao"],
                         Valor = (Double)dr["Valor"],
-                        QntdEstoque = (int)dr["QntdEstoque"],
+                        QntdEstoque = Convert.ToInt32(dr["QntdEstoque"]),
                     });
             }
-            return produto;
+            return produtos;
         }
 
     }

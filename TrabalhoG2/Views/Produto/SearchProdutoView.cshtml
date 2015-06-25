@@ -1,0 +1,55 @@
+﻿@model Data.Produto
+
+@{
+    ViewBag.Title = "Busca de Produto - Atenda";
+    int id = Model.IdProduto;
+}
+
+<h2>Busca de Produto</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+
+        <dt>
+            Estoque
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QntdEstoque)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "EditProdutoView", new { pId = id }) |
+    @Html.ActionLink("Deletar", "DeleteProdutoView", new { pId = id })
+</p>
+
+<div>
+    @Html.ActionLink("Voltar", "../Home")
+</div>

@@ -18,9 +18,9 @@ namespace WebService.Controllers
         }
 
         // GET: api/Produto/5
-        public Produto Get(int id)
+        public Produto Get(int pId)
         {
-            return ProdutoRepository.GetOne(id);
+            return ProdutoRepository.GetOne(pId);
         }
 
         // POST: api/Produto

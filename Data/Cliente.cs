@@ -17,7 +17,7 @@ namespace Data
         public String Estado { get; set; }
         public String Pais { get; set; }
         public String CPF { get; set; }
-        //testes
+
         public Cliente()
         {
 

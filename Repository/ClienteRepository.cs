@@ -39,7 +39,7 @@ namespace Repository
             MySqlCommand cmd = new MySqlCommand();
 
             sql.Append("UPDATE Cliente SET Nome=@Nome, Telefone=@Telefone, Endereco=@Endereco, Bairro=@Bairro, Cidade=@Cidade, Estado=@Estado, Pais=@Pais, CPF=@CPF");
-            sql.Append("WHERE IdCliente=" + pCliente.IdCliente);
+            sql.Append(" WHERE IdCliente = " + pCliente.IdCliente);
 
             cmd.Parameters.AddWithValue("@Nome", (pCliente.Nome));
             cmd.Parameters.AddWithValue("@Telefone", pCliente.Telefone);
@@ -60,26 +60,26 @@ namespace Repository
             MySqlCommand cmd = new MySqlCommand();
 
             sql.Append("DELETE FROM Cliente ");
-            sql.Append("WHERE IdCliente=" + pId);
+            sql.Append("WHERE IdCliente = " + pId);
 
             cmd.CommandText = sql.ToString();
             MySqlConn.CommandPersist(cmd);
         }
 
-        public static Cliente GetOne(int pId)
+        public static Cliente GetName(String pNome)
         {
             StringBuilder sql = new StringBuilder();
             Cliente cliente = new Cliente();
 
             sql.Append("SELECT * ");
             sql.Append("FROM Cliente ");
-            sql.Append("WHERE IdCliente=" + pId);
+            sql.Append("WHERE Nome = '" + pNome + "'");
 
             MySqlDataReader dr = MySqlConn.Get(sql.ToString());
 
             while (dr.Read())
             {
-                cliente.IdCliente = (int)dr["IdCliente"];
+                cliente.IdCliente = Convert.ToInt32(dr["IdCliente"]);
                 cliente.Nome = (String)dr["Nome"];
                 cliente.Telefone = (String)dr["Telefone"];
                 cliente.Endereco = (String)dr["Endereco"];
@@ -89,13 +89,41 @@ namespace Repository
                 cliente.Pais = (String)dr["Pais"];
                 cliente.CPF = (String)dr["CPF"];
             }
+            dr.Close();
+            return cliente;
+        }
+
+        public static Cliente GetOne(int pId)
+        {
+            StringBuilder sql = new StringBuilder();
+            Cliente cliente = new Cliente();
+
+            sql.Append("SELECT * ");
+            sql.Append("FROM Cliente ");
+            sql.Append("WHERE IdCliente = " + pId);
+
+            MySqlDataReader dr = MySqlConn.Get(sql.ToString());
+
+            while (dr.Read())
+            {
+                cliente.IdCliente = Convert.ToInt32(dr["IdCliente"]);
+                cliente.Nome = (String)dr["Nome"];
+                cliente.Telefone = (String)dr["Telefone"];
+                cliente.Endereco = (String)dr["Endereco"];
+                cliente.Bairro = (String)dr["Bairro"];
+                cliente.Cidade = (String)dr["Cidade"];
+                cliente.Estado = (String)dr["Estado"];
+                cliente.Pais = (String)dr["Pais"];
+                cliente.CPF = (String)dr["CPF"];
+            }
+            dr.Close();
             return cliente;
         }
 
         public static List<Cliente> GetAll()
         {
             StringBuilder sql = new StringBuilder();
-            List<Cliente> cliente = new List<Cliente>();
+            List<Cliente> clientes = new List<Cliente>();
 
             sql.Append("SELECT * ");
             sql.Append("FROM Cliente ");
@@ -104,10 +132,10 @@ namespace Repository
 
             while (dr.Read())
             {
-                cliente.Add(
+                clientes.Add(
                     new Cliente
                     {
-                        IdCliente = (int)dr["IdCliente"],
+                        IdCliente = Convert.ToInt32(dr["IdCliente"]),
                         Nome = (String)dr["Nome"],
                         Telefone = (String)dr["Telefone"],
                         Endereco = (String)dr["Endereco"],
@@ -118,13 +146,11 @@ namespace Repository
                         CPF = (String)dr["CPF"]
                     });
             }
-
             dr.Close();
-
-            return cliente;
+            return clientes;
         }
 
-        public static List<Cliente> GetBySearch(DateTime dataInicial, DateTime dataFim)
+        public static List<Cliente> GetBySearch(String Nome)
         {
             StringBuilder sql = new StringBuilder();
             List<Cliente> cliente = new List<Cliente>();
@@ -139,6 +165,7 @@ namespace Repository
                 cliente.Add(
                     new Cliente
                     {
+                        IdCliente = (int)dr["IdCliente"],
                         Nome = (string)dr["Nome"],
                         Telefone = (string)dr["Telefone"],
                         Endereco = (string)dr["Endereco"],

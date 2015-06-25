@@ -27,13 +27,13 @@ namespace TrabalhoG2.Controllers
             OrdemServicoRepository nova = new OrdemServicoRepository();
             nova.Create(pOs);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListOsView");
         }
 
 
         public ActionResult EditOsView(int pId)
         {
-            var ordens = ClienteRepository.GetOne(pId);
+            var ordens = OrdemServicoRepository.GetOne(pId);
             return View(ordens);
         }
 
@@ -43,7 +43,7 @@ namespace TrabalhoG2.Controllers
             OrdemServicoRepository edit = new OrdemServicoRepository();
             edit.Update(ordem);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListOsView");
 
         }
 
@@ -51,7 +51,7 @@ namespace TrabalhoG2.Controllers
         {
             OrdemServicoRepository exclui = new OrdemServicoRepository();
             exclui.Delete(pId);
-            return RedirectToAction("Index");
+            return RedirectToAction("ListOsView");
 
         }
     }

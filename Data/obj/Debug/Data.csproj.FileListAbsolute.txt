@@ -13,6 +13,5 @@ C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Data\obj\D
 C:\Users\Alisson\Documents\Ulbra\5º semestre\OO2\Trabalho\TrabalhoG2\Data\obj\Debug\Data.pdb
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Data\bin\Debug\Data.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Data\bin\Debug\Data.pdb
-C:\Users\Anderson\Source\Repos\TrabalhoG2\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Data\obj\Debug\Data.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Data\obj\Debug\Data.pdb

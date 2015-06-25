@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Data.Cliente>
+@{
+    ViewBag.Title = "Lista de Clientes - Atenda";
+}
+
+<h2>Lista de Clientes</h2>
+
+
+	<hr />
+<dl class="dl-horizontal">
+    @foreach (var Cliente in Model)
+    {
+
+        <dt>
+            Nome:
+        </dt>
+
+        <dd>
+            @Cliente.Nome
+        </dd>
+
+        <dt>
+            Telefone:
+        </dt>
+
+        <dd>
+            @Cliente.Telefone
+        </dd>
+
+        <dt>
+            Endereço:
+        </dt>
+
+        <dd>
+            @Cliente.Endereco
+        </dd>
+
+        <dt>
+            Bairro:
+        </dt>
+
+        <dd>
+            @Cliente.Bairro
+        </dd>
+
+        <dt>
+            Cidade:
+        </dt>
+
+        <dd>
+            @Cliente.Cidade
+        </dd>
+
+        <dt>
+            Estado:
+        </dt>
+
+        <dd>
+            @Cliente.Estado
+        </dd>
+
+        <dt>
+            Pais:
+        </dt>
+
+        <dd>
+            @Cliente.Pais
+        </dd>
+
+        <dt>
+            CPF:
+        </dt>
+
+        <dd>
+            @Cliente.CPF
+        </dd>
+
+        <dd>
+            @Html.ActionLink("Alterar", "EditClienteView", new { pId = Cliente.IdCliente }) |
+            @Html.ActionLink("Deletar", "DeleteClientView", new { pId = Cliente.IdCliente })
+        </dd>
+
+    }
+</dl>
+
+<div>
+    @Html.ActionLink("Voltar", "../Home")
+</div>

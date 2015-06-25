@@ -27,7 +27,7 @@ namespace TrabalhoG2.Controllers
             ClienteRepository nova = new ClienteRepository();
             nova.Create(pCliente);
 
-            return RedirectToAction("Home");
+            return RedirectToAction("ListClientesView");
         }
 
 
@@ -43,7 +43,7 @@ namespace TrabalhoG2.Controllers
             ClienteRepository edit = new ClienteRepository();
             edit.Update(cliente);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListClientesView");
 
         }
 
@@ -51,15 +51,23 @@ namespace TrabalhoG2.Controllers
         {
             ClienteRepository exclui = new ClienteRepository();
             exclui.Delete(pId);
-            return RedirectToAction("Index");
+            return RedirectToAction("ListClientesView");
 
         }
 
-        public ActionResult ListarClienteView(int pId)
+        public ActionResult ListClientesView()
         {
-            ClienteRepository Lista = new ClienteRepository();
-            //Lista.GetAll();
-            return RedirectToAction("Index");
+            var Cliente = ClienteRepository.GetAll();
+
+            return View(Cliente);
+
+        }
+
+        public ActionResult SearchClienteView(String pNome)
+        {
+            var cliente = ClienteRepository.GetName(pNome);
+
+            return View(cliente);
 
         }
 

@@ -40,7 +40,7 @@ namespace Repository
             MySqlCommand cmd = new MySqlCommand();
 
             sql.Append("UPDATE OrdemServico SET Equipamento=@Equipamento, Marca=@Marca, Modelo=@Modelo, NumeroSerie=@NumeroSerie, Defeito=@Defeito, Servico=@Servico, Local=@Local_, Observacoes=@Observacoes, Status=@Status_");
-            sql.Append("WHERE IdOS=" + pOS.IdOS);
+            sql.Append(" WHERE IdOS=" + pOS.IdOS);
 
             cmd.Parameters.AddWithValue("@Equipamento", (pOS.Equipamento));
             cmd.Parameters.AddWithValue("@Marca", pOS.Marca);
@@ -101,7 +101,7 @@ namespace Repository
             List<OrdemServico> os = new List<OrdemServico>();
 
             sql.Append("SELECT * ");
-            sql.Append("FROM OrdemServico ");
+            sql.Append("FROM OrdemServico");
 
             MySqlDataReader dr = MySqlConn.Get(sql.ToString());
 

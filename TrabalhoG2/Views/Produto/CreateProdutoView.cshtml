@@ -1,27 +1,18 @@
 ﻿@model Data.Produto
 
 @{
-    ViewBag.Title = "CreateProdutoView";
+    ViewBag.Title = "Novo Produto - Atenda";
 }
 
-<h2>CreateProdutoView</h2>
+<h2>Novo Produto</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Produto</h4>
         <hr />
         @Html.ValidationSummary(true)
-        <div class="form-group">
-            @Html.LabelFor(model => model.IdProduto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.IdProduto)
-                @Html.ValidationMessageFor(model => model.IdProduto)
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -63,5 +54,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "../Home")
 </div>

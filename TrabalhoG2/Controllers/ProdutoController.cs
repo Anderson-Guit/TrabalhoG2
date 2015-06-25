@@ -27,7 +27,7 @@ namespace TrabalhoG2.Controllers
             ProdutoRepository nova = new ProdutoRepository();
             nova.Create(pProduto);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListProdutosView");
         }
 
 
@@ -43,7 +43,7 @@ namespace TrabalhoG2.Controllers
             ProdutoRepository edit = new ProdutoRepository();
             edit.Update(produto);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ListProdutosView");
 
         }
 
@@ -51,7 +51,23 @@ namespace TrabalhoG2.Controllers
         {
             ProdutoRepository exclui = new ProdutoRepository();
             exclui.Delete(pId);
-            return RedirectToAction("Index");
+            return RedirectToAction("ListProdutosView");
+
+        }
+
+        public ActionResult ListProdutosView()
+        {
+            var produto = ProdutoRepository.GetAll();
+
+            return View(produto);
+
+        }
+
+        public ActionResult SearchProdutoView(String pNome)
+        {
+            var produto = ProdutoRepository.GetName(pNome);
+
+            return View(produto);
 
         }
     }
