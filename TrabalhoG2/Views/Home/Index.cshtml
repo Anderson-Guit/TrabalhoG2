@@ -10,11 +10,12 @@
         window.location = "../Cliente/SearchClienteView?pNome=" + nome;
     }
     function BuscaOS() {
-        var nome;
+        var id;
 
-        nome = prompt("Digite o numero da OS:");
+        id = prompt("Digite o numero da OS:");
 
-        window.location = "../OrdemServico/SearchOSView?pNome=" + nome;
+        window.location = "../OrdemServico/SearchOSView?pId=" + id;
+
     }
     function BuscaProduto() {
         var nome;
@@ -42,7 +43,7 @@
     <div class="col-md-4">
         <h2>Ordens de Serviço</h2>
         <p><a class="btn btn-default" href="http://localhost:47105/OrdemServico/CreateOsView">Novo &raquo;</a>
-        <a class="btn btn-default" href="../CreateClienteView.cshtml">Listar &raquo;</a>
+            <a class="btn btn-default" href="http://localhost:47105/OrdemServico/ListOsView">Listar &raquo;</a>
         <a class="btn btn-default" onclick="BuscaOS();">Buscar &raquo;</a></p>
     </div>
     <div class="col-md-4">

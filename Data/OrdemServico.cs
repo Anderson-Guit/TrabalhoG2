@@ -10,7 +10,7 @@ namespace Data
     {
 
         public int IdOS { get; set; }
-        public Cliente Cliente { get; set; }
+        public int Cliente { get; set; }
         public String Equipamento { get; set; }
         public String Marca { get; set; }
         public String Modelo { get; set; }

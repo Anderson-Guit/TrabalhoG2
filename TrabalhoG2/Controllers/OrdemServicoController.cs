@@ -54,5 +54,20 @@ namespace TrabalhoG2.Controllers
             return RedirectToAction("ListOsView");
 
         }
+        public ActionResult ListOsView()
+        {
+            var os = OrdemServicoRepository.GetAll();
+
+            return View(os);
+
+        }
+
+        public ActionResult SearchOsView(int pId)
+        {
+            var os = OrdemServicoRepository.GetOne(pId);
+
+            return View(os);
+
+        }
     }
 }

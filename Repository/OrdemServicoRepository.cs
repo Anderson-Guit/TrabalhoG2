@@ -17,9 +17,10 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("INSERT INTO OrdemServico (Equipamento, Marca, Modelo, NumeroSerie, Defeito, Servico, Local_, Observacoes, Status_)");
-            sql.Append("VALUES(@Equipamento, @Marca, @Modelo, @NumeroSerie, @Defeito, @Servico, @Local, @Observacoes, @Status)");
+            sql.Append("INSERT INTO OrdemServico (Cliente_IdCliente, Equipamento, Marca, Modelo, NumeroSerie, Defeito, Servico, Local_, Observacoes, Status_)");
+            sql.Append("VALUES(@Cliente, @Equipamento, @Marca, @Modelo, @NumeroSerie, @Defeito, @Servico, @Local, @Observacoes, @Status)");
 
+            cmd.Parameters.AddWithValue("@Cliente", (pOS.Cliente));
             cmd.Parameters.AddWithValue("@Equipamento", (pOS.Equipamento));
             cmd.Parameters.AddWithValue("@Marca", pOS.Marca);
             cmd.Parameters.AddWithValue("@Modelo", pOS.Modelo);
@@ -81,7 +82,8 @@ namespace Repository
 
             while (dr.Read())
             {
-                os.IdOS = (int)dr["IdOS"];
+                os.IdOS = Convert.ToInt32(dr["IdOS"]);
+                os.Cliente = Convert.ToInt32(dr["Cliente_IdCliente"]);
                 os.Equipamento = (String)dr["Equipamento"];
                 os.Marca = (String)dr["Marca"];
                 os.Modelo = (String)dr["Modelo"];
@@ -110,7 +112,8 @@ namespace Repository
                 os.Add(
                     new OrdemServico
                     {
-                        IdOS = (int)dr["IdOS"],
+                        IdOS = Convert.ToInt32(dr["IdOS"]),
+                        Cliente = Convert.ToInt32(dr["Cliente_IdCliente"]),
                         Equipamento = (String)dr["Equipamento"],
                         Marca = (String)dr["Marca"],
                         Modelo = (String)dr["Modelo"],

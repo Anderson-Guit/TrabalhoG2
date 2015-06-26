@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "EditOsView";
+    var id = Model.Cliente;
 }
 
 <h2>EditOsView</h2>
@@ -15,10 +16,10 @@
         <hr />
         @Html.ValidationSummary(true)
         <div class="form-group">
-            @Html.LabelFor(model => model.IdOS, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Cliente, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IdOS)
-                @Html.ValidationMessageFor(model => model.IdOS)
+            @Html.DisplayFor(modelItem => id)
+            @Html.ValidationMessageFor(model => model.Cliente)
             </div>
         </div>
 
@@ -103,5 +104,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "../Home")
 </div>
