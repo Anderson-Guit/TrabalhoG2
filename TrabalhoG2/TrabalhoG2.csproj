@@ -168,9 +168,7 @@
     <Content Include="Views\Usuario\CreateUserView.cshtml" />
     <Content Include="Views\Usuario\EditUserView.cshtml" />
     <Content Include="Views\Usuario\DeleteUserView.cshtml" />
-    <Content Include="Views\Cliente\ListClientesView.cshtml" />
     <Content Include="Views\Cliente\SearchClienteView.cshtml" />
-    <Content Include="Views\Produto\ListProdutosView.cshtml" />
     <Content Include="Views\Produto\SearchProdutoView.cshtml" />
     <Content Include="Views\Login\CreateUserView.cshtml" />
     <Content Include="Views\Login\EditUserView.cshtml" />
@@ -179,6 +177,8 @@
     <Content Include="Views\Login\LoginView.cshtml" />
     <Content Include="Views\OrdemServico\ListOsView.cshtml" />
     <Content Include="Views\OrdemServico\SearchOsView.cshtml" />
+    <Content Include="Views\Produto\ListProdutosView.cshtml" />
+    <Content Include="Views\Cliente\ListClientesView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

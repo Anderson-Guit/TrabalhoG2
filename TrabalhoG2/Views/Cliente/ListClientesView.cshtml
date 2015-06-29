@@ -1,88 +1,81 @@
 ﻿@model IEnumerable<Data.Cliente>
+
 @{
-    ViewBag.Title = "Lista de Clientes - Atenda";
+    ViewBag.Title = "ListClientesView";
 }
 
-<h2>Lista de Clientes</h2>
+<h2>ListClientesView</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPF)
+        </th>
+        <th></th>
+    </tr>
 
-	<hr />
-<dl class="dl-horizontal">
-    @foreach (var Cliente in Model)
-    {
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CPF)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
 
-        <dt>
-            Nome:
-        </dt>
-
-        <dd>
-            @Cliente.Nome
-        </dd>
-
-        <dt>
-            Telefone:
-        </dt>
-
-        <dd>
-            @Cliente.Telefone
-        </dd>
-
-        <dt>
-            Endereço:
-        </dt>
-
-        <dd>
-            @Cliente.Endereco
-        </dd>
-
-        <dt>
-            Bairro:
-        </dt>
-
-        <dd>
-            @Cliente.Bairro
-        </dd>
-
-        <dt>
-            Cidade:
-        </dt>
-
-        <dd>
-            @Cliente.Cidade
-        </dd>
-
-        <dt>
-            Estado:
-        </dt>
-
-        <dd>
-            @Cliente.Estado
-        </dd>
-
-        <dt>
-            Pais:
-        </dt>
-
-        <dd>
-            @Cliente.Pais
-        </dd>
-
-        <dt>
-            CPF:
-        </dt>
-
-        <dd>
-            @Cliente.CPF
-        </dd>
-
-        <dd>
-            @Html.ActionLink("Alterar", "EditClienteView", new { pId = Cliente.IdCliente }) |
-            @Html.ActionLink("Deletar", "DeleteClientView", new { pId = Cliente.IdCliente })
-        </dd>
-
-    }
-</dl>
-
-<div>
-    @Html.ActionLink("Voltar", "../Home")
-</div>
+</table>

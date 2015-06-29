@@ -1,11 +1,11 @@
 ﻿@model Data.Produto
 
 @{
-    ViewBag.Title = "Busca de Produto - Atenda";
+    ViewBag.Title = "Produto - Atenda";
     int id = Model.IdProduto;
 }
 
-<h2>Busca de Produto</h2>
+<h2>Produto</h2>
 
 <div>
 	<hr />
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.Label("Descrição")
         </dt>
 
         <dd>

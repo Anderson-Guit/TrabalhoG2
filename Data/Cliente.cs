@@ -10,6 +10,8 @@ namespace Data
     {
         public int IdCliente { get; set; }
         public String Nome { get; set; }
+
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public String Telefone { get; set; }
         public String Endereco { get; set; }
         public String Bairro { get; set; }
