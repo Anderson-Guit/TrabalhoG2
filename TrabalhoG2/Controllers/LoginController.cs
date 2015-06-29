@@ -12,7 +12,7 @@ namespace TrabalhoG2.Controllers
     {
         //
         // GET: /Login/
-        public ActionResult LoginView()
+        public ActionResult Index()
         {
             return View();
         }
@@ -34,8 +34,8 @@ namespace TrabalhoG2.Controllers
 
         public ActionResult EditUserView(int pId)
         {
-            var produtos = ProdutoRepository.GetOne(pId);
-            return View(produtos);
+            var user = UsuarioRepository.GetOne(pId);
+            return View(user);
         }
 
         [HttpPost]
@@ -48,20 +48,43 @@ namespace TrabalhoG2.Controllers
 
         }
 
+        [HttpGet]
         public ActionResult DeleteUserView(int pId)
         {
             UsuarioRepository exclui = new UsuarioRepository();
             exclui.Delete(pId);
             return RedirectToAction("ListUsersView");
+        }
 
+
+        [HttpPost]
+        public ActionResult ListUsersView(String Nome, String Senha)
+        {
+            var login = UsuarioRepository.CheckUser(Nome, Senha);
+            if (login.Nome != null)
+            {
+                var usuario = UsuarioRepository.GetAll();
+                Session["Nome"] = Nome;
+
+                return View(usuario);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         public ActionResult ListUsersView()
         {
-            var usuario = UsuarioRepository.GetAll();
+            if (Session["Nome"] != null) { 
+                var usuario = UsuarioRepository.GetAll();
 
-            return View(usuario);
-
+                return View(usuario);
+            }
+            else
+            {
+                return View();
+            }
         }
 
 	}

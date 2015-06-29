@@ -32,7 +32,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 text-center">
         <h2>Clientes</h2>
 
         <p><a class="btn btn-default" href="http://localhost:47105/Cliente/CreateClienteView">Novo &raquo;</a>
@@ -40,16 +40,31 @@
         <a class="btn btn-default" onclick="BuscaCliente();" >Buscar &raquo;
             </a></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 text-center">
         <h2>Ordens de Serviço</h2>
         <p><a class="btn btn-default" href="http://localhost:47105/OrdemServico/CreateOsView">Novo &raquo;</a>
             <a class="btn btn-default" href="http://localhost:47105/OrdemServico/ListOsView">Listar &raquo;</a>
         <a class="btn btn-default" onclick="BuscaOS();">Buscar &raquo;</a></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 text-center">
         <h2>Produtos</h2>
         <p><a class="btn btn-default" href="http://localhost:47105/Produto/CreateProdutoView">Novo &raquo;</a>
             <a class="btn btn-default" href="http://localhost:47105/Produto/ListProdutosView">Listar &raquo;</a>
         <a class="btn btn-default" onclick="BuscaProduto();">Buscar &raquo;</a></p>    
     </div>
 </div>
+
+@if (Session["Nome"] != null)
+{
+<div class="row">
+
+        <div class="col-md-12 text-center">
+            <h2>Usuarios</h2>
+            <p>
+                <a class="btn btn-default" href="http://localhost:47105/Login/CreateUserView">Novo &raquo;</a>
+                <a class="btn btn-default" href="http://localhost:47105/Login/ListUsersView">Listar &raquo;</a>
+            </p>
+        </div>
+    
+</div>
+}

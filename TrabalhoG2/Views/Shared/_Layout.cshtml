@@ -28,7 +28,21 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("+Produto", "CreateProdutoView", "Produto")</li>
                 </ul>
+                @if (Session["Nome"] != null)
+                {
+                    <p class="navbar-text navbar-right text-right">
+                        Olá @Session["nome"]! &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink("Sair", "Exit", "Home")
+                    </p>
+                }
+                else
+                {
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    </ul>
+                }
             </div>
+            
         </div>
     </div>
     <div class="container body-content">

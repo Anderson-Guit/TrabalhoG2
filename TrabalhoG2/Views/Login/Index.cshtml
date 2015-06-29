@@ -1,12 +1,12 @@
 ﻿@model Data.Usuario
 
 @{
-    ViewBag.Title = "CreateUserView";
+    ViewBag.Title = "Login";
 }
 
-<h2>CreateUserView</h2>
+<h2>Login</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("ListUsersView", "Login"))
 {
     @Html.AntiForgeryToken()
     
@@ -26,27 +26,20 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Senha, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Senha)
+                @Html.PasswordFor(model => model.Senha)
                 @Html.ValidationMessageFor(model => model.Senha)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Adm, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Adm)
-                @Html.ValidationMessageFor(model => model.Adm)
+                
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Entrar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Sair", "Index")
 </div>
