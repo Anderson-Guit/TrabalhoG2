@@ -174,9 +174,8 @@
     <Content Include="Views\Produto\SearchProdutoView.cshtml" />
     <Content Include="Views\Login\CreateUserView.cshtml" />
     <Content Include="Views\Login\EditUserView.cshtml" />
-    <Content Include="Views\Login\DeleteUserView.cshtml" />
     <Content Include="Views\Login\ListUsersView.cshtml" />
-    <Content Include="Views\Login\LoginView.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\OrdemServico\ListOsView.cshtml" />
     <Content Include="Views\OrdemServico\SearchOsView.cshtml" />
   </ItemGroup>

@@ -17,7 +17,7 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("INSERT INTO Cliente (Nome, Senha, Adm)");
+            sql.Append("INSERT INTO Usuario (Nome, Senha, Adm)");
             sql.Append("VALUES(@Nome, @Senha, @Adm)");
 
             cmd.Parameters.AddWithValue("@Nome", pUsuario.Nome);
@@ -33,7 +33,7 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("UPDATE Usuario SET Nome=@Nome, Senha=@Senha, Adm=@Adm");
+            sql.Append("UPDATE Usuario SET Nome=@Nome, Senha=@Senha, Adm=@Adm ");
             sql.Append("WHERE IdUsuario=" + pUsuario.IdUsuario);
 
             cmd.Parameters.AddWithValue("@Nome", pUsuario.Nome);
@@ -97,6 +97,27 @@ namespace Repository
                         Senha = (string)dr["Senha"],
                         Adm = (Boolean)dr["Adm"],
                     });
+            }
+            return usuario;
+        }
+
+        public static Usuario CheckUser(String Nome, String Senha)
+        {
+            StringBuilder sql = new StringBuilder();
+            Usuario usuario = new Usuario();
+
+            sql.Append("SELECT * ");
+            sql.Append("FROM Usuario ");
+            sql.Append("WHERE Nome='" + Nome + "' and Senha='" + Senha + "'");
+
+            MySqlDataReader dr = MySqlConn.Get(sql.ToString());
+
+            while (dr.Read())
+            {
+                usuario.IdUsuario = (int)dr["IdUsuario"];
+                usuario.Nome = (string)dr["Nome"];
+                usuario.Senha = (string)dr["Senha"];
+                usuario.Adm = (Boolean)dr["Adm"];
             }
             return usuario;
         }

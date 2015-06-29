@@ -7,7 +7,7 @@
 <h2>ListUsersView</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Criar novo usuário", "CreateUserView")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,8 @@
             @Html.DisplayFor(modelItem => item.Adm)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Editar", "EditUserView", new { pId = item.IdUsuario }) |
+            @Html.ActionLink("Delete", "DeleteUserView", new { pId = item.IdUsuario })
         </td>
     </tr>
 }

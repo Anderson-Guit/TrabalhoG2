@@ -15,5 +15,12 @@ namespace TrabalhoG2.Controllers
             return View();
         }
 
+        public ActionResult Exit()
+        {
+            @Session["Nome"] = null;
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
