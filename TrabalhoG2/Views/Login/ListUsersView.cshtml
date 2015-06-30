@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Data.Usuario>
 
 @{
-    ViewBag.Title = "ListUsersView";
+    ViewBag.Title = "Lista de Usuarios - Atenda";
 }
 
-<h2>ListUsersView</h2>
+<h2>Lista de Usuarios</h2>
 
 <p>
     @Html.ActionLink("Criar novo usuário", "CreateUserView")
@@ -41,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.Adm)
         </td>
         <td>
-            @Html.ActionLink("Editar", "EditUserView", new { pId = item.IdUsuario }) |
+            @Html.ActionLink("Alterar", "EditUserView", new { pId = item.IdUsuario }) |
             @Html.ActionLink("Delete", "DeleteUserView", new { pId = item.IdUsuario })
         </td>
     </tr>

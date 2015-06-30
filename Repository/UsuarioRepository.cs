@@ -69,7 +69,7 @@ namespace Repository
 
             while (dr.Read())
             {
-                usuario.IdUsuario = (int)dr["IdUsuario"];
+                usuario.IdUsuario = Convert.ToInt32(dr["IdUsuario"]);
                 usuario.Nome = (string)dr["Nome"];
                 usuario.Senha = (string)dr["Senha"];
                 usuario.Adm = (Boolean)dr["Adm"];
@@ -92,7 +92,7 @@ namespace Repository
                 usuario.Add(
                     new Usuario
                     {
-                        IdUsuario = (int)dr["IdUsuario"],
+                        IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
                         Nome = (string)dr["Nome"],
                         Senha = (string)dr["Senha"],
                         Adm = (Boolean)dr["Adm"],
@@ -114,7 +114,7 @@ namespace Repository
 
             while (dr.Read())
             {
-                usuario.IdUsuario = (int)dr["IdUsuario"];
+                usuario.IdUsuario = Convert.ToInt32(dr["IdUsuario"]);
                 usuario.Nome = (string)dr["Nome"];
                 usuario.Senha = (string)dr["Senha"];
                 usuario.Adm = (Boolean)dr["Adm"];

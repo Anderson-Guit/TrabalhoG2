@@ -74,9 +74,10 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             OrdemServico os = new OrdemServico();
 
-            sql.Append("SELECT * ");
-            sql.Append("FROM OrdemServico ");
-            sql.Append("WHERE IdOS=" + pId);
+            sql.Append("select os.IdOS, os.Cliente_IdCliente, cl.nome, os.Equipamento, os.Marca, os.modelo, os.NumeroSerie, os.Defeito, os.Servico, os.Local_, os.Observacoes, os.Status_");
+            sql.Append(" from ordemservico as os");
+            sql.Append(" inner join cliente as cl");
+            sql.Append(" where os.Cliente_IdCliente = cl.IdCliente");
 
             MySqlDataReader dr = MySqlConn.Get(sql.ToString());
 
@@ -84,6 +85,7 @@ namespace Repository
             {
                 os.IdOS = Convert.ToInt32(dr["IdOS"]);
                 os.Cliente = Convert.ToInt32(dr["Cliente_IdCliente"]);
+                os.ClienteNome = (String)dr["Nome"];
                 os.Equipamento = (String)dr["Equipamento"];
                 os.Marca = (String)dr["Marca"];
                 os.Modelo = (String)dr["Modelo"];
@@ -102,8 +104,10 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             List<OrdemServico> os = new List<OrdemServico>();
 
-            sql.Append("SELECT * ");
-            sql.Append("FROM OrdemServico");
+            sql.Append("select os.IdOS, os.Cliente_IdCliente, cl.nome, os.Equipamento, os.Marca, os.modelo, os.NumeroSerie, os.Defeito, os.Servico, os.Local_, os.Observacoes, os.Status_");
+            sql.Append(" from ordemservico as os");
+            sql.Append(" inner join cliente as cl");
+            sql.Append(" where os.Cliente_IdCliente = cl.IdCliente");
 
             MySqlDataReader dr = MySqlConn.Get(sql.ToString());
 
@@ -114,6 +118,7 @@ namespace Repository
                     {
                         IdOS = Convert.ToInt32(dr["IdOS"]),
                         Cliente = Convert.ToInt32(dr["Cliente_IdCliente"]),
+                        ClienteNome = (String)dr["Nome"],
                         Equipamento = (String)dr["Equipamento"],
                         Marca = (String)dr["Marca"],
                         Modelo = (String)dr["Modelo"],
