@@ -1,8 +1,7 @@
 ﻿@model Data.Cliente
 
 @{
-    ViewBag.Title = "SearchClienteView";
-    int id = Model.IdCliente;
+    ViewBag.Title = "Cliente - Atenda";
 }
 
 <h2>Cliente</h2>
@@ -78,8 +77,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "EditClienteView", new { pId = id }) |
-    @Html.ActionLink("Deletar", "DeleteClientView", new { pId = id })
+    @Html.ActionLink("Alterar", "EditClienteView", new { pId = Model.IdCliente }) |
+    @Html.ActionLink("Deletar", "DeleteClienteView", new { pId = Model.IdCliente })
 </p>
 
 @Html.ActionLink("Voltar", "../Home")

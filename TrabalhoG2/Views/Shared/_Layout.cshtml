@@ -31,6 +31,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("+Produto", "CreateProdutoView", "Produto")</li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("+Agenda", "CreateAgendaView", "Agenda")</li>
+                </ul>
                 @if (Session["Nome"] != null)
                 {
                     <p class="navbar-text navbar-right text-right">

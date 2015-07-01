@@ -24,6 +24,13 @@
 
         window.location = "../Produto/SearchProdutoView?pNome=" + nome;
     }
+    function BuscaAgenda() {
+        var nome;
+
+        nome = prompt("Digite o nome do Cliente:");
+
+        window.location = "../Produto/DetailsAgendaView?pNome=" + nome;
+    }
 </script>
 
 <div class="jumbotron">
@@ -51,6 +58,14 @@
         <p><a class="btn btn-default" href="http://localhost:47105/Produto/CreateProdutoView">Novo &raquo;</a>
             <a class="btn btn-default" href="http://localhost:47105/Produto/ListProdutosView">Listar &raquo;</a>
         <a class="btn btn-default" onclick="BuscaProduto();">Buscar &raquo;</a></p>    
+    </div>
+    <div class="col-md-4 text-center">
+        <h2>Agenda</h2>
+        <p>
+            <a class="btn btn-default" href="http://localhost:47105/Agenda/CreateAgendaView">Novo &raquo;</a>
+            <a class="btn btn-default" href="http://localhost:47105/Agenda/ListAgendasView">Listar &raquo;</a>
+            <a class="btn btn-default" onclick="BuscaAgenda();">Buscar &raquo;</a>
+        </p>
     </div>
 </div>
 

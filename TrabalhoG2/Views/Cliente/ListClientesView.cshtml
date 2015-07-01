@@ -1,19 +1,16 @@
 ﻿@model IEnumerable<Data.Cliente>
 
 @{
-    ViewBag.Title = "ListClientesView";
+    ViewBag.Title = "Lista de Clientes - Atenda";
 }
 
-<h2>ListClientesView</h2>
+<h2>Lista de Clientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo Cliente", "CreateClienteView")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdCliente)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
@@ -44,9 +41,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdCliente)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
@@ -71,11 +65,15 @@
             @Html.DisplayFor(modelItem => item.CPF)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Alterar", "EditClienteView", new { pId = item.IdCliente }) |
+            @Html.ActionLink("Exibir", "SearchClienteView", new { pId = item.IdCliente }) |
+            @Html.ActionLink("Deletar", "DeleteClienteView", new { pId = item.IdCliente })
         </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Voltar", "../Home")
+</div>

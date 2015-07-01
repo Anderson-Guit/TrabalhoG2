@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Data.Agenda>
+
+@{
+    ViewBag.Title = "Agendamentos - Atenda";
+}
+
+<h2>Agendamentos</h2>
+
+<p>
+    @Html.ActionLink("Nova", "CreateAgendaView")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UsuarioNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClienteNome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servico)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClienteNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servico)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Observacoes)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "EditAgendaView", new { pId = item.IdAgenda }) |
+            @Html.ActionLink("Exibir", "DetailsAgendaView", new { pId = item.IdAgenda }) |
+            @Html.ActionLink("Deletar", "DeleteAgendaView", new { pId = item.IdAgenda })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Voltar", "../Home")
+</div>

@@ -1,0 +1,76 @@
+﻿@model Data.Agenda
+
+@{
+    ViewBag.Title = "Agenda - Atenda";
+}
+
+<h2>Agenda</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClienteNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClienteNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Local)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Local)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacoes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "EditAgendaView", new { pId = Model.IdAgenda })
+</p>
+
+<div>
+    @Html.ActionLink("Voltar", "../Home")
+</div>
