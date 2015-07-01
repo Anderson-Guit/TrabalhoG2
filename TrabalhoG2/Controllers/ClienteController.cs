@@ -63,6 +63,14 @@ namespace TrabalhoG2.Controllers
 
         }
 
+        public ActionResult DetailsClienteView(int pId)
+        {
+            var cliente = ClienteRepository.GetOne(pId);
+
+            return View(cliente);
+
+        }
+
         public ActionResult SearchClienteView(String pNome)
         {
             var cliente = ClienteRepository.GetName(pNome);

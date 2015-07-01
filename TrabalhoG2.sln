@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conn", "Conn\Conn.csproj", "{F0DE31C1-1DFB-4ED5-B911-AE0E23B972F7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banco de Dados", "Banco de Dados", "{C696C7F7-0A32-4E91-9DC2-A6D9D962B6FE}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\BD_Atenda.sql = ..\..\..\Desktop\BD_Atenda.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

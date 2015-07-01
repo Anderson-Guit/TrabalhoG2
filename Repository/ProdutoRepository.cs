@@ -46,13 +46,13 @@ namespace Repository
             MySqlConn.CommandPersist(cmd);
         }
 
-        public void Delete(int pId)
+        public void Delete(Produto produto)
         {
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
             sql.Append("DELETE FROM Produto ");
-            sql.Append("WHERE IdProduto=" + pId);
+            sql.Append("WHERE IdProduto=" + produto.IdProduto);
 
             cmd.CommandText = sql.ToString();
             MySqlConn.CommandPersist(cmd);

@@ -180,6 +180,7 @@
     <Content Include="Views\Agenda\DeleteAgendaView.cshtml" />
     <Content Include="Views\Agenda\ListAgendasView.cshtml" />
     <Content Include="Views\Agenda\DetailsAgendaView.cshtml" />
+    <Content Include="Views\Cliente\DetailsClienteView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

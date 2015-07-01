@@ -33,18 +33,12 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult CreateAgendaView(Agenda pAgenda)
         {
-            try
-            {
-                AgendaRepository nova = new AgendaRepository();
-                nova.Create(pAgenda);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                Response.Write("<script>alert('Deu ruim brother!');</script>");
-                return View();
-            }
+             AgendaRepository nova = new AgendaRepository();
+             nova.Create(pAgenda);
+
+             return RedirectToAction("Index");
+
         }
 
         // GET: /Agenda/Edit/5

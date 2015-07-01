@@ -1,19 +1,16 @@
 ﻿@model IEnumerable<Data.Produto>
 
 @{
-    ViewBag.Title = "ListProdutosView";
+    ViewBag.Title = "Lista de Produtos - Atenda";
 }
 
-<h2>ListProdutosView</h2>
+<h2>Lista de Produtos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo Produto", "CreateProdutoView")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdProduto)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
@@ -32,9 +29,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdProduto)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
         <td>
@@ -47,11 +41,14 @@
             @Html.DisplayFor(modelItem => item.QntdEstoque)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Alterar", "EditProdutoView", new { pId = item.IdProduto }) |
+            @Html.ActionLink("Deletar", "DeleteProdutoView", new { pId = item.IdProduto })
         </td>
     </tr>
 }
 
 </table>
+
+<div>
+    @Html.ActionLink("Voltar", "ListProdutosView")
+</div>

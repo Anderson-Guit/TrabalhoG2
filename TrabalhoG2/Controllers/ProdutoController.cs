@@ -49,8 +49,16 @@ namespace TrabalhoG2.Controllers
 
         public ActionResult DeleteProdutoView(int pId)
         {
+            var produto = ProdutoRepository.GetOne(pId);
+            return View(produto);
+
+        }
+
+        [HttpPost]
+        public ActionResult DeleteProdutoView(Produto produto)
+        {
             ProdutoRepository exclui = new ProdutoRepository();
-            exclui.Delete(pId);
+            exclui.Delete(produto);
             return RedirectToAction("ListProdutosView");
 
         }

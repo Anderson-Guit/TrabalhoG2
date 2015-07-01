@@ -23,16 +23,16 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("+Cliente", "CreateClienteView", "Cliente")</li>
+                    <li>@Html.ActionLink("Cliente", "ListClientesView", "Cliente")</li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("+Ordem de Serviço", "CreateOsView", "OrdemServico")</li>
+                    <li>@Html.ActionLink("Ordem de Serviço", "ListOsView", "OrdemServico")</li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("+Produto", "CreateProdutoView", "Produto")</li>
+                    <li>@Html.ActionLink("Produto", "ListProdutosView", "Produto")</li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("+Agenda", "CreateAgendaView", "Agenda")</li>
+                    <li>@Html.ActionLink("Agenda", "ListAgendasView", "Agenda")</li>
                 </ul>
                 @if (Session["Nome"] != null)
                 {

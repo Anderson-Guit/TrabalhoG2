@@ -18,4 +18,3 @@ C:\Users\Anderson\Source\Repos\TrabalhoG2\Conn\bin\Debug\Conn.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Conn\bin\Debug\Conn.pdb
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Conn\obj\Debug\Conn.dll
 C:\Users\Anderson\Source\Repos\TrabalhoG2\Conn\obj\Debug\Conn.pdb
-C:\Users\Anderson\Source\Repos\TrabalhoG2\Conn\obj\Debug\Conn.csprojResolveAssemblyReference.cache
