@@ -18,8 +18,8 @@ namespace Data
             "Números e caracteres especiais não são permitidos no nome.")]
         public String Nome { get; set; }
 
-        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-         [Display(Name = "Telefone", Description = "Informe o telefone do Cliente.")]
+
+        [Display(Name = "Telefone", Description = "Informe o telefone do Cliente.")]
         [Required (ErrorMessage="Telefone é obrigatório")]
         
         public String Telefone { get; set; }
