@@ -13,6 +13,7 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.IdAgenda)
         <div class="form-group">
             @Html.LabelFor(model => model.ClienteNome, new { @class = "control-label col-md-2" })
             <div class="col-md-10">

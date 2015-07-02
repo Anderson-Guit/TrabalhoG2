@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrabalhoG2", "TrabalhoG2\TrabalhoG2.csproj", "{6C83B30A-754D-4F05-A957-4AF0504FF066}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{25085223-2234-41F3-8D44-9CD48C75E837}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{164A2BE6-0505-43A9-B4C1-4FE6E4B1DA0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{24C44561-3C82-4554-9542-28FC190114EB}"
@@ -28,10 +26,6 @@ Global
 		{6C83B30A-754D-4F05-A957-4AF0504FF066}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C83B30A-754D-4F05-A957-4AF0504FF066}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C83B30A-754D-4F05-A957-4AF0504FF066}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25085223-2234-41F3-8D44-9CD48C75E837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25085223-2234-41F3-8D44-9CD48C75E837}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25085223-2234-41F3-8D44-9CD48C75E837}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25085223-2234-41F3-8D44-9CD48C75E837}.Release|Any CPU.Build.0 = Release|Any CPU
 		{164A2BE6-0505-43A9-B4C1-4FE6E4B1DA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{164A2BE6-0505-43A9-B4C1-4FE6E4B1DA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{164A2BE6-0505-43A9-B4C1-4FE6E4B1DA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -33,11 +33,14 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult CreateAgendaView(Agenda pAgenda)
         {
-
-             AgendaRepository nova = new AgendaRepository();
-             nova.Create(pAgenda);
-
-             return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                AgendaRepository nova = new AgendaRepository();
+                nova.Create(pAgenda);
+                return RedirectToAction("ListAgendasView");
+            }
+            return View("CreateAgendaView");
+             
 
         }
 
@@ -52,17 +55,15 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult EditAgendaView(Agenda pAgenda)
         {
-            try
+            if (ModelState.IsValid)
             {
                 AgendaRepository edit = new AgendaRepository();
                 edit.Update(pAgenda);
+                return RedirectToAction("ListAgendasView");
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return View("EditAgendaView");
+                
         }
 
         // GET: /Agenda/Delete/5

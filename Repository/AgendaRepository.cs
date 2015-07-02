@@ -37,14 +37,14 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("UPDATE Agenda SET Data_=@Data, Hora=@Hora, Local_=@Local, Servico=@Servico, Obervacoes=@Obervacoes");
-            sql.Append(" WHERE IdAgenda = " + pAgenda.IdAgenda);
+            sql.Append("UPDATE Agenda SET Data_=@Data, Hora=@Hora, Local_=@Local, Servico=@Servico, Observacoes=@Observacoes");
+            sql.Append(" WHERE IdAgenda=" + pAgenda.IdAgenda);
 
             cmd.Parameters.AddWithValue("@Data", pAgenda.Data);
             cmd.Parameters.AddWithValue("@Hora", pAgenda.Hora);
             cmd.Parameters.AddWithValue("@Local", pAgenda.Local);
             cmd.Parameters.AddWithValue("@Servico", pAgenda.Servico);
-            cmd.Parameters.AddWithValue("@Obervacoes", pAgenda.Observacoes);
+            cmd.Parameters.AddWithValue("@Observacoes", pAgenda.Observacoes);
 
             cmd.CommandText = sql.ToString();
             MySqlConn.CommandPersist(cmd);
@@ -84,7 +84,7 @@ namespace Repository
                 agenda.Hora = (String)dr["Hora"];
                 agenda.Local = (String)dr["Local_"];
                 agenda.Servico = (String)dr["Servico"];
-                agenda.Observacoes = (String)dr["Obervacoes"];
+                agenda.Observacoes = (String)dr["Observacoes"];
             }
             dr.Close();
             return agenda;
@@ -95,7 +95,7 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             Agenda agenda = new Agenda();
 
-            sql.Append("select ag.IdAgenda, ag.Usuario_IdUsuario, us.Nome, ag.Cliente_IdCliente, cl.Nome, ag.Data_, ag.Hora, ag.Local_, ag.Servico, ag.Observacoes");
+            sql.Append("select ag.IdAgenda, ag.Usuario_IdUsuario, us.Nome as usuarios, ag.Cliente_IdCliente, cl.Nome as clientes, ag.Data_, ag.Hora, ag.Local_, ag.Servico, ag.Observacoes");
             sql.Append(" from agenda as ag");
             sql.Append(" inner join cliente as cl");
             sql.Append(" inner join usuario as us");
@@ -107,9 +107,9 @@ namespace Repository
             {
                 agenda.IdAgenda = Convert.ToInt32(dr["IdAgenda"]);
                 agenda.IdCliente = Convert.ToInt32(dr["Cliente_IdCliente"]);
-                agenda.ClienteNome = (String)dr["Nome"];
+                agenda.ClienteNome = (String)dr["clientes"];
                 agenda.IdUsuario = Convert.ToInt32(dr["Usuario_IdUsuario"]);
-                agenda.UsuarioNome = (String)dr["Nome"];
+                agenda.UsuarioNome = (String)dr["usuarios"];
                 agenda.Data = (String)dr["Data_"];
                 agenda.Hora = (String)dr["Hora"];
                 agenda.Local = (String)dr["Local_"];
@@ -125,7 +125,7 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             List<Agenda> agendas = new List<Agenda>();
 
-            sql.Append("select ag.IdAgenda, ag.Usuario_IdUsuario, us.Nome, ag.Cliente_IdCliente, cl.Nome, ag.Data_, ag.Hora, ag.Local_, ag.Servico, ag.Observacoes");
+            sql.Append("select ag.IdAgenda, ag.Usuario_IdUsuario, us.Nome as usuarios, ag.Cliente_IdCliente, cl.Nome as clientes, ag.Data_, ag.Hora, ag.Local_, ag.Servico, ag.Observacoes");
             sql.Append(" from agenda as ag");
             sql.Append(" inner join cliente as cl");
             sql.Append(" on ag.Cliente_IdCliente = cl.IdCliente");
@@ -141,14 +141,21 @@ namespace Repository
                     {
                         IdAgenda = Convert.ToInt32(dr["IdAgenda"]),
                         IdUsuario = Convert.ToInt32(dr["Usuario_IdUsuario"]),
-                        UsuarioNome = (String)dr["Nome"],
+                        UsuarioNome = dr.IsDBNull(dr.GetOrdinal("usuarios")) ? "" : (String)dr["usuarios"],
                         IdCliente = Convert.ToInt32(dr["Cliente_IdCliente"]),
-                        ClienteNome = (String)dr["Nome"],
-                        Data = (String)dr["Data_"],
-                        Hora = (String)dr["Hora"],
-                        Local = (String)dr["Local_"],
-                        Servico = (String)dr["Servico"],
-                        Observacoes = (String)dr["Observacoes"]
+                        ClienteNome = dr.IsDBNull(dr.GetOrdinal("clientes")) ? "" : (String)dr["clientes"],
+                        Data = dr.IsDBNull(dr.GetOrdinal("Data_")) ? "" : (String)dr["Data_"],
+                        Hora = dr.IsDBNull(dr.GetOrdinal("Hora")) ? "" : (String)dr["Hora"],
+                        Local = dr.IsDBNull(dr.GetOrdinal("Local_")) ? "" : (String)dr["Local_"],
+                        Servico = dr.IsDBNull(dr.GetOrdinal("Servico")) ? "" : (String)dr["Servico"],
+                        Observacoes = dr.IsDBNull(dr.GetOrdinal("Observacoes")) ? "" : (String)dr["Observacoes"]
+
+
+                        
+                      
+                     
+                        
+                        
                     });
             }
             dr.Close();
@@ -172,14 +179,14 @@ namespace Repository
                     {
                         IdAgenda = Convert.ToInt32(dr["IdAgenda"]),
                         IdCliente = Convert.ToInt32(dr["IdCliente"]),
-                        ClienteNome = (String)dr["Nome"],
+                        ClienteNome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"],
                         IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
-                        UsuarioNome = (String)dr["Nome"],
-                        Data = (String)dr["Data_"],
-                        Hora = (String)dr["Hora"],
-                        Local = (String)dr["Local_"],
-                        Servico = (String)dr["Servico"],
-                        Observacoes = (String)dr["Observacoes"]
+                        UsuarioNome = dr.IsDBNull(dr.GetOrdinal("Observacoes")) ? "" : (String)dr["Nome"],
+                        Data = dr.IsDBNull(dr.GetOrdinal("Data_")) ? "" : (String)dr["Data_"],
+                        Hora = dr.IsDBNull(dr.GetOrdinal("Hora")) ? "" : (String)dr["Hora"],
+                        Local = dr.IsDBNull(dr.GetOrdinal("Local_")) ? "" : (String)dr["Local_"],
+                        Servico = dr.IsDBNull(dr.GetOrdinal("Servico")) ? "" : (String)dr["Servico"],
+                        Observacoes = dr.IsDBNull(dr.GetOrdinal("Observacoes")) ? "" : (String)dr["Observacoes"]
                     });
             }
 

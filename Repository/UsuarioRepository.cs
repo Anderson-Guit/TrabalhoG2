@@ -70,8 +70,8 @@ namespace Repository
             while (dr.Read())
             {
                 usuario.IdUsuario = Convert.ToInt32(dr["IdUsuario"]);
-                usuario.Nome = (string)dr["Nome"];
-                usuario.Senha = (string)dr["Senha"];
+                usuario.Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"];
+                usuario.Senha = dr.IsDBNull(dr.GetOrdinal("Senha")) ? "" : (String)dr["Senha"];
                 usuario.Adm = (Boolean)dr["Adm"];
             }
             return usuario;
@@ -93,8 +93,8 @@ namespace Repository
                     new Usuario
                     {
                         IdUsuario = Convert.ToInt32(dr["IdUsuario"]),
-                        Nome = (string)dr["Nome"],
-                        Senha = (string)dr["Senha"],
+                        Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"],
+                        Senha = dr.IsDBNull(dr.GetOrdinal("Senha")) ? "" : (String)dr["Senha"],
                         Adm = (Boolean)dr["Adm"],
                     });
             }

@@ -13,8 +13,6 @@ namespace Data
         public int IdCliente { get; set; }
 
         [Display(Name = "Nome", Description = "Informe o Nome do Cliente.")]
-        [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage =
-            "Números e caracteres especiais não são permitidos no nome.")]
         [Required(ErrorMessage = "Nome é obrigatório.")]
         public String Nome { get; set; }
 

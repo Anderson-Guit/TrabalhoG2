@@ -24,10 +24,16 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult CreateClienteView(Cliente pCliente)
         {
-            ClienteRepository nova = new ClienteRepository();
-            nova.Create(pCliente);
-
-            return RedirectToAction("ListClientesView");
+            if (ModelState.IsValid)
+            {
+                ClienteRepository nova = new ClienteRepository();
+                nova.Create(pCliente);
+                return RedirectToAction("ListClientesView");
+            }
+       
+                return View("CreateClienteView");
+          
+            
         }
 
 
@@ -40,10 +46,14 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult EditClienteView(Cliente cliente)
         {
-            ClienteRepository edit = new ClienteRepository();
-            edit.Update(cliente);
+            if (ModelState.IsValid)
+            {
+                ClienteRepository edit = new ClienteRepository();
+                edit.Update(cliente);
+                return RedirectToAction("ListClientesView");
+            }
 
-            return RedirectToAction("ListClientesView");
+            return View("EditClienteView");
 
         }
 

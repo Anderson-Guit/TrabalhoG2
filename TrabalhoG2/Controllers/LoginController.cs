@@ -25,10 +25,14 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult CreateUserView(Usuario pUsuario)
         {
-            UsuarioRepository novo = new UsuarioRepository();
-            novo.Create(pUsuario);
+            if (ModelState.IsValid)
+            {
+                UsuarioRepository novo = new UsuarioRepository();
+                novo.Create(pUsuario);
+                return RedirectToAction("ListUsersView");
+            }
 
-            return RedirectToAction("ListUsersView");
+            return View("CreateUserView");
         }
 
 
@@ -41,10 +45,15 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult EditUserView(Usuario pUsuario)
         {
-            UsuarioRepository edit = new UsuarioRepository();
-            edit.Update(pUsuario);
+            if (ModelState.IsValid)
+            {
+                UsuarioRepository edit = new UsuarioRepository();
+                edit.Update(pUsuario);
+                return RedirectToAction("ListUsersView");
+            }
 
-            return RedirectToAction("ListUsersView");
+            return View("EditUserView");
+            
 
         }
 

@@ -24,10 +24,14 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult CreateProdutoView(Produto pProduto)
         {
-            ProdutoRepository nova = new ProdutoRepository();
-            nova.Create(pProduto);
+            if (ModelState.IsValid)
+            {
+                ProdutoRepository nova = new ProdutoRepository();
+                nova.Create(pProduto);
+                return RedirectToAction("ListProdutosView");
+            }
 
-            return RedirectToAction("ListProdutosView");
+            return View("CreateProdutoView");
         }
 
 
@@ -40,10 +44,15 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult EditProdutoView(Produto produto)
         {
-            ProdutoRepository edit = new ProdutoRepository();
-            edit.Update(produto);
+            if (ModelState.IsValid)
+            {
+                ProdutoRepository edit = new ProdutoRepository();
+                edit.Update(produto);
+                return RedirectToAction("ListProdutosView");
+            }
 
-            return RedirectToAction("ListProdutosView");
+            return View("EditProdutoView");
+            
 
         }
 

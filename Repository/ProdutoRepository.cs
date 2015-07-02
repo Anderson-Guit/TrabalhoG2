@@ -37,7 +37,7 @@ namespace Repository
             sql.Append("UPDATE Produto SET Nome=@Nome, Descricao=@Descricao, Valor=@Valor, QntdEstoque=@QntdEstoque");
             sql.Append(" WHERE IdProduto=" + pProduto.IdProduto);
 
-            cmd.Parameters.AddWithValue("@Nome", (pProduto.Nome));
+            cmd.Parameters.AddWithValue("@Nome", pProduto.Nome);
             cmd.Parameters.AddWithValue("@Descricao", pProduto.Descricao);
             cmd.Parameters.AddWithValue("@Valor", pProduto.Valor);
             cmd.Parameters.AddWithValue("@QntdEstoque", pProduto.QntdEstoque);
@@ -72,9 +72,9 @@ namespace Repository
             while (dr.Read())
             {
                 produto.IdProduto = Convert.ToInt32(dr["IdProduto"]);
-                produto.Nome = (String)dr["Nome"];
-                produto.Descricao = (String)dr["Descricao"];
-                produto.Valor = (Double)dr["Valor"];
+                produto.Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"];
+                produto.Descricao = dr.IsDBNull(dr.GetOrdinal("Descricao")) ? "" : (String)dr["Descricao"];
+                produto.Valor =  (Double)dr["Valor"];
                 produto.QntdEstoque = Convert.ToInt32(dr["QntdEstoque"]);
 
             }
@@ -95,8 +95,8 @@ namespace Repository
             while (dr.Read())
             {
                 produto.IdProduto = Convert.ToInt32(dr["IdProduto"]);
-                produto.Nome = (String)dr["Nome"];
-                produto.Descricao = (String)dr["Descricao"];
+                produto.Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"];
+                produto.Descricao = dr.IsDBNull(dr.GetOrdinal("Descricao")) ? "" : (String)dr["Descricao"];
                 produto.Valor = (Double)dr["Valor"];
                 produto.QntdEstoque = Convert.ToInt32(dr["QntdEstoque"]);
 
@@ -120,9 +120,9 @@ namespace Repository
                     new Produto
                     {
                         IdProduto = Convert.ToInt32(dr["IdProduto"]),
-                        Nome = (String)dr["Nome"],
-                        Descricao = (String)dr["Descricao"],
-                        Valor = (Double)dr["Valor"],
+                        Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"],
+                        Descricao = dr.IsDBNull(dr.GetOrdinal("Descricao")) ? "" : (String)dr["Descricao"],
+                        Valor =  (Double)dr["Valor"],
                         QntdEstoque = Convert.ToInt32(dr["QntdEstoque"]),
                     });
             }

@@ -24,10 +24,14 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult CreateOsView(OrdemServico pOs)
         {
-            OrdemServicoRepository nova = new OrdemServicoRepository();
-            nova.Create(pOs);
+            if (ModelState.IsValid)
+            {
+                OrdemServicoRepository nova = new OrdemServicoRepository();
+                nova.Create(pOs);
+                return RedirectToAction("ListOsView");
+            }
 
-            return RedirectToAction("ListOsView");
+            return View("CreateOsView");
         }
 
 
@@ -40,10 +44,15 @@ namespace TrabalhoG2.Controllers
         [HttpPost]
         public ActionResult EditOsView(OrdemServico ordem)
         {
-            OrdemServicoRepository edit = new OrdemServicoRepository();
-            edit.Update(ordem);
+            if (ModelState.IsValid)
+            {
+                OrdemServicoRepository edit = new OrdemServicoRepository();
+                edit.Update(ordem);
+                return RedirectToAction("ListOsView");
+            }
 
-            return RedirectToAction("ListOsView");
+           
+            return View("EditOsView");
 
         }
 

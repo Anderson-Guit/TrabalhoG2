@@ -40,7 +40,7 @@ namespace Repository
             StringBuilder sql = new StringBuilder();
             MySqlCommand cmd = new MySqlCommand();
 
-            sql.Append("UPDATE OrdemServico SET Equipamento=@Equipamento, Marca=@Marca, Modelo=@Modelo, NumeroSerie=@NumeroSerie, Defeito=@Defeito, Servico=@Servico, Local=@Local_, Observacoes=@Observacoes, Status=@Status_");
+            sql.Append("UPDATE OrdemServico SET Equipamento=@Equipamento, Marca=@Marca, Modelo=@Modelo, NumeroSerie=@NumeroSerie, Defeito=@Defeito, Servico=@Servico, Local_=@Local, Observacoes=@Observacoes, Status_=@Status");
             sql.Append(" WHERE IdOS=" + pOS.IdOS);
 
             cmd.Parameters.AddWithValue("@Equipamento", (pOS.Equipamento));
@@ -85,16 +85,16 @@ namespace Repository
             {
                 os.IdOS = Convert.ToInt32(dr["IdOS"]);
                 os.Cliente = Convert.ToInt32(dr["Cliente_IdCliente"]);
-                os.ClienteNome = (String)dr["Nome"];
-                os.Equipamento = (String)dr["Equipamento"];
-                os.Marca = (String)dr["Marca"];
-                os.Modelo = (String)dr["Modelo"];
-                os.NumeroSerie = (String)dr["NumeroSerie"];
-                os.Defeito = (String)dr["Defeito"];
-                os.Servico = (String)dr["Servico"];
-                os.Local = (String)dr["Local_"];
-                os.Observacoes = (String)dr["Observacoes"];
-                os.Status = (String)dr["Status_"];
+                os.ClienteNome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"];
+                os.Equipamento = dr.IsDBNull(dr.GetOrdinal("Equipamento")) ? "" : (String)dr["Equipamento"];
+                os.Marca = dr.IsDBNull(dr.GetOrdinal("Marca")) ? "" : (String)dr["Marca"];
+                os.Modelo = dr.IsDBNull(dr.GetOrdinal("Modelo")) ? "" : (String)dr["Modelo"];
+                os.NumeroSerie = dr.IsDBNull(dr.GetOrdinal("NumeroSerie")) ? "" : (String)dr["NumeroSerie"];
+                os.Defeito = dr.IsDBNull(dr.GetOrdinal("Defeito")) ? "" : (String)dr["Defeito"];
+                os.Servico = dr.IsDBNull(dr.GetOrdinal("Servico")) ? "" : (String)dr["Servico"];
+                os.Local = dr.IsDBNull(dr.GetOrdinal("Local_")) ? "" : (String)dr["Local_"];
+                os.Observacoes = dr.IsDBNull(dr.GetOrdinal("Observacoes")) ? "" : (String)dr["Observacoes"];
+                os.Status = dr.IsDBNull(dr.GetOrdinal("Status_")) ? "" : (String)dr["Status_"];
             }
             return os;
         }
@@ -118,16 +118,16 @@ namespace Repository
                     {
                         IdOS = Convert.ToInt32(dr["IdOS"]),
                         Cliente = Convert.ToInt32(dr["Cliente_IdCliente"]),
-                        ClienteNome = (String)dr["Nome"],
-                        Equipamento = (String)dr["Equipamento"],
-                        Marca = (String)dr["Marca"],
-                        Modelo = (String)dr["Modelo"],
-                        NumeroSerie = (String)dr["NumeroSerie"],
-                        Defeito = (String)dr["Defeito"],
-                        Servico = (String)dr["Servico"],
-                        Local = (String)dr["Local_"],
-                        Observacoes = (String)dr["Observacoes"],
-                        Status = (String)dr["Status_"]
+                        ClienteNome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"],
+                        Equipamento = dr.IsDBNull(dr.GetOrdinal("Equipamento")) ? "" : (String)dr["Equipamento"],
+                        Marca = dr.IsDBNull(dr.GetOrdinal("Marca")) ? "" : (String)dr["Marca"],
+                        Modelo = dr.IsDBNull(dr.GetOrdinal("Modelo")) ? "" : (String)dr["Modelo"],
+                        NumeroSerie = dr.IsDBNull(dr.GetOrdinal("NumeroSerie")) ? "" : (String)dr["NumeroSerie"],
+                        Defeito = dr.IsDBNull(dr.GetOrdinal("Defeito")) ? "" : (String)dr["Defeito"],
+                        Servico = dr.IsDBNull(dr.GetOrdinal("Servico")) ? "" : (String)dr["Servico"],
+                        Local = dr.IsDBNull(dr.GetOrdinal("Local_")) ? "" : (String)dr["Local_"],
+                        Observacoes = dr.IsDBNull(dr.GetOrdinal("Observacoes")) ? "" : (String)dr["Observacoes"],
+                        Status = dr.IsDBNull(dr.GetOrdinal("Status_")) ? "" : (String)dr["Status_"]
                     });
             }
             return os;

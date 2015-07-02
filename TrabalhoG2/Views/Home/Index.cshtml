@@ -7,22 +7,29 @@
 
         nome = prompt("Digite o nome do cliente:");        
 
-        window.location = "../Cliente/SearchClienteView?pNome=" + nome;
+        if (id != null) {
+            window.location = "../Cliente/SearchClienteView?pNome=" + nome;
+        }
+
     }
     function BuscaOS() {
         var id;
 
         id = prompt("Digite o numero da OS:");
 
-        window.location = "../OrdemServico/SearchOSView?pId=" + id;
-
+        if (id != null) {
+            window.location = "../OrdemServico/SearchOSView?pId=" + id;
+        }
     }
     function BuscaProduto() {
         var nome;
 
         nome = prompt("Digite o nome do Produto:");
 
-        window.location = "../Produto/SearchProdutoView?pNome=" + nome;
+        if (id != null) {
+            window.location = "../Produto/SearchProdutoView?pNome=" + nome;
+        }
+
     }
 </script>
 

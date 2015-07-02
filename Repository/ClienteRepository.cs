@@ -41,7 +41,7 @@ namespace Repository
             sql.Append("UPDATE Cliente SET Nome=@Nome, Telefone=@Telefone, Endereco=@Endereco, Bairro=@Bairro, Cidade=@Cidade, Estado=@Estado, Pais=@Pais, CPF=@CPF");
             sql.Append(" WHERE IdCliente = " + pCliente.IdCliente);
 
-            cmd.Parameters.AddWithValue("@Nome", (pCliente.Nome));
+            cmd.Parameters.AddWithValue("@Nome", pCliente.Nome);
             cmd.Parameters.AddWithValue("@Telefone", pCliente.Telefone);
             cmd.Parameters.AddWithValue("@Endereco", pCliente.Endereco);
             cmd.Parameters.AddWithValue("@Bairro", pCliente.Bairro);
@@ -80,14 +80,14 @@ namespace Repository
             while (dr.Read())
             {
                 cliente.IdCliente = Convert.ToInt32(dr["IdCliente"]);
-                cliente.Nome = (String)dr["Nome"];
-                cliente.Telefone = (String)dr["Telefone"];
-                cliente.Endereco = (String)dr["Endereco"];
-                cliente.Bairro = (String)dr["Bairro"];
-                cliente.Cidade = (String)dr["Cidade"];
-                cliente.Estado = (String)dr["Estado"];
-                cliente.Pais = (String)dr["Pais"];
-                cliente.CPF = (String)dr["CPF"];
+                cliente.Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"];
+                cliente.Telefone = dr.IsDBNull(dr.GetOrdinal("Telefone")) ? "" : (String)dr["Telefone"];
+                cliente.Endereco = dr.IsDBNull(dr.GetOrdinal("Endereco")) ? "" : (String)dr["Endereco"];
+                cliente.Bairro = dr.IsDBNull(dr.GetOrdinal("Bairro")) ? "" : (String)dr["Bairro"];
+                cliente.Cidade = dr.IsDBNull(dr.GetOrdinal("Cidade")) ? "" : (String)dr["Cidade"];
+                cliente.Estado = dr.IsDBNull(dr.GetOrdinal("Estado")) ? "" : (String)dr["Estado"];
+                cliente.Pais = dr.IsDBNull(dr.GetOrdinal("Pais")) ? "" : (String)dr["Pais"];
+                cliente.CPF = dr.IsDBNull(dr.GetOrdinal("CPF")) ? "" : (String)dr["CPF"];
             }
             dr.Close();
             return cliente;
@@ -107,14 +107,14 @@ namespace Repository
             while (dr.Read())
             {
                 cliente.IdCliente = Convert.ToInt32(dr["IdCliente"]);
-                cliente.Nome = (String)dr["Nome"];
-                cliente.Telefone = (String)dr["Telefone"];
-                cliente.Endereco = (String)dr["Endereco"];
-                cliente.Bairro = (String)dr["Bairro"];
-                cliente.Cidade = (String)dr["Cidade"];
-                cliente.Estado = (String)dr["Estado"];
-                cliente.Pais = (String)dr["Pais"];
-                cliente.CPF = (String)dr["CPF"];
+                cliente.Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"];
+                cliente.Telefone = dr.IsDBNull(dr.GetOrdinal("Telefone")) ? "" : (String)dr["Telefone"];
+                cliente.Endereco = dr.IsDBNull(dr.GetOrdinal("Endereco")) ? "" : (String)dr["Endereco"];
+                cliente.Bairro = dr.IsDBNull(dr.GetOrdinal("Bairro")) ? "" : (String)dr["Bairro"];
+                cliente.Cidade = dr.IsDBNull(dr.GetOrdinal("Cidade")) ? "" : (String)dr["Cidade"];
+                cliente.Estado = dr.IsDBNull(dr.GetOrdinal("Estado")) ? "" : (String)dr["Estado"];
+                cliente.Pais = dr.IsDBNull(dr.GetOrdinal("Pais")) ? "" : (String)dr["Pais"];
+                cliente.CPF = dr.IsDBNull(dr.GetOrdinal("CPF")) ? "" : (String)dr["CPF"];
             }
             dr.Close();
             return cliente;
@@ -136,14 +136,16 @@ namespace Repository
                     new Cliente
                     {
                         IdCliente = Convert.ToInt32(dr["IdCliente"]),
-                        Nome = (String)dr["Nome"],
-                        Telefone = (String)dr["Telefone"],
-                        Endereco = (String)dr["Endereco"],
-                        Bairro = (String)dr["Bairro"],
-                        Cidade = (String)dr["Cidade"],
-                        Estado = (String)dr["Estado"],
-                        Pais = (String)dr["Pais"],
-                        CPF = (String)dr["CPF"]
+                        Nome =  dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"],
+                        Telefone =  dr.IsDBNull(dr.GetOrdinal("Telefone")) ? "" : (String)dr["Telefone"],
+                        Endereco =  dr.IsDBNull(dr.GetOrdinal("Endereco")) ? "" : (String)dr["Endereco"],
+                        Bairro = dr.IsDBNull(dr.GetOrdinal("Bairro")) ? "" : (String)dr["Bairro"],
+                        Cidade = dr.IsDBNull(dr.GetOrdinal("Cidade")) ? "" : (String)dr["Cidade"],
+                        Estado = dr.IsDBNull(dr.GetOrdinal("Estado")) ? "" : (String)dr["Estado"],
+                        Pais = dr.IsDBNull(dr.GetOrdinal("Pais")) ? "" : (String)dr["Pais"],
+                        CPF = dr.IsDBNull(dr.GetOrdinal("CPF")) ? "" : (String)dr["CPF"]
+                      
+        
                     });
             }
             dr.Close();
@@ -166,14 +168,14 @@ namespace Repository
                     new Cliente
                     {
                         IdCliente = (int)dr["IdCliente"],
-                        Nome = (string)dr["Nome"],
-                        Telefone = (string)dr["Telefone"],
-                        Endereco = (string)dr["Endereco"],
-                        Bairro = (string)dr["Bairro"],
-                        Cidade = (string)dr["Cidade"],
-                        Estado = (string)dr["Estado"],
-                        Pais = (string)dr["Pais"],
-                        CPF = (string)dr["CPF"]
+                        Nome = dr.IsDBNull(dr.GetOrdinal("Nome")) ? "" : (String)dr["Nome"],
+                        Telefone = dr.IsDBNull(dr.GetOrdinal("Telefone")) ? "" : (String)dr["Telefone"],
+                        Endereco = dr.IsDBNull(dr.GetOrdinal("Endereco")) ? "" : (String)dr["Endereco"],
+                        Bairro = dr.IsDBNull(dr.GetOrdinal("Bairro")) ? "" : (String)dr["Bairro"],
+                        Cidade = dr.IsDBNull(dr.GetOrdinal("Cidade")) ? "" : (String)dr["Cidade"],
+                        Estado = dr.IsDBNull(dr.GetOrdinal("Estado")) ? "" : (String)dr["Estado"],
+                        Pais = dr.IsDBNull(dr.GetOrdinal("Pais")) ? "" : (String)dr["Pais"],
+                        CPF = dr.IsDBNull(dr.GetOrdinal("CPF")) ? "" : (String)dr["CPF"]
                     });
             }
 

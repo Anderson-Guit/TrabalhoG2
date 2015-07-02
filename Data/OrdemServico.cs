@@ -37,9 +37,10 @@ namespace Data
         [Display(Name = "Local", Description = "Informe o Local do Equipamento.")]
         [Required(ErrorMessage = "Local é obrigatório")]
         public String Local { get; set; }
-        [Display(Name = "Defeito", Description = "Informe o Defeito do Equipamento.")]
+        [Display(Name = "Observações", Description = "Informe as Observações do Equipamento.")]
         [StringLength(100, MinimumLength = 5, ErrorMessage =
            "Se necessário as observações devem ter no mínimo 5 e no máximo 100 caracteres.")]
+        [Required(ErrorMessage = "Observações são obrigatórias")]
         public String Observacoes { get; set; }
         [Display(Name = "Status", Description = "Informe o Status do Equipamento.")]
         [Required(ErrorMessage = "Status é obrigatório")]
